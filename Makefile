@@ -2,7 +2,7 @@ OUT=verymeta
 BIN=sqlite3todot
 
 all: clean
-	gcc -Wall -o ${BIN} -lsqlite3 sqlite3todot.c
+	gcc -Wall -o ${BIN} sqlite3todot.c -lsqlite3
 	rm -f meta.db
 	cat meta.sql | sqlite3 meta.db
 	./sqlite3todot meta.db meta.db > ${OUT}.dot
